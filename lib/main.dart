@@ -47,6 +47,7 @@ class HomePage extends StatelessWidget {
                     borderRadius: BorderRadius.circular(16),
                   ),
                   backgroundColor: Colors.white,
+                  isScrollControlled: true,
                   builder: (context) {
                     return Design3Page();
                   },
@@ -600,10 +601,11 @@ class _Design3PageState extends State<Design3Page> {
   Widget build(BuildContext context) {
     var mediaQueryData = MediaQuery.of(context);
     var paddingBottom = mediaQueryData.padding.bottom;
+    var insetBottom = mediaQueryData.viewInsets.bottom;
     return Padding(
       padding: EdgeInsets.only(
         top: 8,
-        bottom: paddingBottom > 0 ? paddingBottom : 16,
+        bottom: paddingBottom > 0 ? paddingBottom + insetBottom : 16 + insetBottom,
       ),
       child: Column(
         mainAxisSize: MainAxisSize.min,
