@@ -318,6 +318,7 @@ class _Design2PageState extends State<Design2Page> {
     var paddingBottom = mediaQueryData.padding.bottom;
     return Scaffold(
       backgroundColor: Colors.white,
+      resizeToAvoidBottomInset: false,
       body: Container(
         width: double.infinity,
         child: Column(
